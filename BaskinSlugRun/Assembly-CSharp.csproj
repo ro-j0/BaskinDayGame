@@ -48,8 +48,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player_Controller_2D.cs" />
-     <Compile Include="Assets\Scripts\Camera_Controller.cs" />
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

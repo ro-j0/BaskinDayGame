@@ -156,14 +156,6 @@ public class Player_Controller_2D : MonoBehaviour
                 isJumping = false;
             }
         }
-
-        //move camera point. This just puts the camera ahead the player based in their direction
-        if (Input.GetAxisRaw("Horizontal") != 0)
-        {
-            camTarget.localPosition = new Vector3(Mathf.Lerp(camTarget.localPosition.x, 
-                camAheadDistance * Input.GetAxisRaw("Horizontal"), camSpeed * Time.deltaTime),
-                camTarget.localPosition.y, camTarget.localPosition.z);
-        }
     }
 
 }
