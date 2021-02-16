@@ -69,30 +69,45 @@ public class Player_Controller_2D : MonoBehaviour
         // Walk/Run to the right
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            if (Input.GetKey("left shift"))
-            {
-                rb2D.velocity = new Vector2(runspeed, rb2D.velocity.y);
-                animator.Play("run");
-            }
-            else
+            if (Input.GetKey("left shift") && isGrounded)
             {
                 rb2D.velocity = new Vector2(walkspeed, rb2D.velocity.y);
                 animator.Play("walk");
+            }
+            else
+            {
+                if (isGrounded == false)
+                {
+                    rb2D.velocity = new Vector2(runspeed - 1, rb2D.velocity.y);
+                }
+                else 
+                { 
+                    rb2D.velocity = new Vector2(runspeed, rb2D.velocity.y);
+                }
+                animator.Play("run");
+
             }
             spriterenderer.flipX = false;
         }
         // Walk/Run to the left
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            if (Input.GetKey("left shift"))
-            {
-                rb2D.velocity = new Vector2(-runspeed, rb2D.velocity.y);
-                animator.Play("run");
-            }
-            else
+            if (Input.GetKey("left shift") && isGrounded)
             {
                 rb2D.velocity = new Vector2(-walkspeed, rb2D.velocity.y);
                 animator.Play("walk");
+            }
+            else
+            {
+                if (isGrounded == false)
+                {
+                    rb2D.velocity = new Vector2(-runspeed + 1, rb2D.velocity.y);
+                }
+                else
+                {
+                    rb2D.velocity = new Vector2(-runspeed, rb2D.velocity.y);
+                }
+                animator.Play("run");
             }
             spriterenderer.flipX = true;
         }
@@ -165,5 +180,9 @@ public class Player_Controller_2D : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
 
+    }
+   
 }
