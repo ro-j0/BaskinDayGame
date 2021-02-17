@@ -33,7 +33,9 @@ public class Player_Controller_2D : MonoBehaviour
     // Variables for ground checking logic
     bool isGrounded;
     [SerializeField]
-    Transform groundCheck;
+    Transform groundCheckL;
+    [SerializeField]
+    Transform groundCheckR;
 
     // Variables for main camera
     public Transform camTarget;
@@ -55,8 +57,9 @@ public class Player_Controller_2D : MonoBehaviour
         /// eitehr on the groud (in a 2D space)
         //////////////////////////////////////////////////////////////////
 
-        if (Physics2D.Linecast(transform.position, groundCheck.position, 
-            1 << LayerMask.NameToLayer("Ground")))
+        if (Physics2D.Linecast(transform.position, groundCheckL.position, 
+            1 << LayerMask.NameToLayer("Ground")) || Physics2D.Linecast(transform.position, 
+            groundCheckR.position, 1 << LayerMask.NameToLayer("Ground")))
             isGrounded = true;
         else
             isGrounded = false;

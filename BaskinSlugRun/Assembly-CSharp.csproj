@@ -37,11 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player_Controller_2D.cs" />
+     <Compile Include="Assets\Scripts\Enemy_Movement.cs" />
      <Compile Include="Assets\Scripts\Start_Game.cs" />
+     <Compile Include="Assets\Scripts\Exit_Button.cs" />
      <Compile Include="Assets\Scripts\Enemy_Script.cs" />
      <Compile Include="Assets\Scripts\Player_Death.cs" />
      <Compile Include="Assets\Scripts\level_Manager.cs" />
-     <Compile Include="Assets\Exit_Button.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.2.1f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Start_Game : MonoBehaviour
 {
-    public GameObject S;
+    // Start is called before the first frame updat
+
+     public GameObject S;
     
+    // Start is called before the first frame updat
+
     private void OnMouseDown() 
     {
         Debug.Log("Button clcik");
